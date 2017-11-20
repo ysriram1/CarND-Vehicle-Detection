@@ -464,4 +464,6 @@ This was a challenging project for a few reasons:
 
 - Each run took a very long time since we needed to preprocess, extract features, scale, and then run classifier for each window in each image and there are about 1200 images in the project video.
 
+- One things to note is that the windows chosen are not very robust, they will likely not work when applied to video shot in a different angle on a different road. More robust windows, would require traversing a larger part of the image, which would again slow down the image processing significantly and result in more false positives.
+
 Based on my reading online, it seems that using a Convolutional Neural Network (the *YOLO* network in particular) instead of an SVM classifier would give a higher accuracy and is much faster. Further we can use a GPU with CNNs to speed up the process. In addition, the CNN would automatically decide on the best image features to use, which would save a lot of training time (and uncertainty). I plan to try this approach out as a future project.

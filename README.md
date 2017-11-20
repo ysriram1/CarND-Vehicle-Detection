@@ -32,7 +32,7 @@ In this project, we are tasked with detecting vehicles in a video. The video con
 
 - *README.md* (this file) is the project report
 - *vechicle_detection_code_clean.ipynb* contains the image processing pipline and related functions
-- *vechicle_detection_code_exploration.ipynb* contains the inital code created to iterate through the parameters etc.  
+- *vechicle_detection_code_exploration.ipynb* contains the code created to explore approaches, generate images, test different parameters etc.  
 - *results/project_video_out.mp4* is a video of the project video with the vehicles marked
 
 ### System Configuration
@@ -409,6 +409,7 @@ As we can see it is overcrowded with windows and makes the whole process very sl
 This approach is much faster and is able to avoid many of the *false positive* detections that previous approach was making. We also modified the classifier output to give us the probability that an inputted image is a car rather than a boolean stating whether it is a car or not. By increasing the probability threshold to over 0.5, we were again able to reduce some more of the false positives.
 
 As seen below, there are no false positives (`draw_boxes() function`):
+
 ![][image5]
 
 Once we have the bounds of the windows with the positive vehicle detections a *heat map* is generated (see below). A hotter area indicates more windows found a vehicle in that area (`gen_heat_map() function`).
